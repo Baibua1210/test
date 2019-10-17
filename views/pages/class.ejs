@@ -1,0 +1,35 @@
+<% include ../partials/header %>
+<div class="container">
+    <h1>Classroom for this semester</h1>
+    <form action="/classsave" method="POST">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Room</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% classes.forEach(function(c){ %>
+            <tr>
+                <td scope="row">
+                    <a href="/classdetail/<%= c.subject_id%>">
+                        <%= c.subject_id%>
+                    </a>
+                    </td>
+                <td><%= c.subject_name%></td>
+                <td><%= c.room%></td>
+                <td><a name="" id="" class="btn btn-primary" href="/classedit/<%= c.subject_id %>" role="button">Edit</a></td>
+            </tr>
+            <% }); %>
+            <tr>
+                <td scope="row"></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+</form>
+</div>
+<% include ../partials/footer %>
