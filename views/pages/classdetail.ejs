@@ -1,0 +1,24 @@
+<% include ../partials/header %>
+
+<div class="container">
+    <h1>Student for <%= detail.subject_id %> <%= detail.subject_name %></h1>
+    <table class="table table-striped" class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Major</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% detail.students.forEach(function(s){ %>
+            <tr>
+                <td scope="row"><%= s.sid %></td>
+                <td><%= s.name %></td>
+                <td><%= s.major %></td>
+            </tr><% }); %>
+        </tbody>
+    </table>
+</div>
+
+<% include ../partials/footer %>
